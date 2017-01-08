@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Monetizador</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue-cyan.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+  </head>
+  <body>
+    <!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Monetizador</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <a class="mdl-navigation__link dialog_entrar">Entrar</a>
+        <a class="mdl-navigation__link ">Sobre nós</a>
+        <a class="mdl-navigation__link" href="">Contato</a>
+      </nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Monetizador</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="app.html">Entrar</a>
+      <a class="mdl-navigation__link" href="">Sobre nós</a>
+      <a class="mdl-navigation__link" href="">Contato</a>
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+    <style>
+    .container{
+      margin-left: 20px;
+      margin-top:10px;
+    }
+    </style>
+    <div class="page-content container"> Conteudo aqui!!!
+        <dialog class="mdl-dialog">
+          <div class="mdl-dialog__content">
+            <p>
+              <form action="#">
+                <div class="mdl-textfield mdl-js-textfield">
+                  <input class="mdl-textfield__input" type="text" id="sample1">
+                  <label class="mdl-textfield__label" for="sample1">Usuário...</label>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield">
+                  <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+                  <label class="mdl-textfield__label" for="sample2">Senha...</label>
+                  <span class="mdl-textfield__error">A senha deve conter somente números!</span>
+                </div>
+              </form>
+            </p>
+          </div>
+            <button type="button" class="mdl-button ok-button" href="">OK</button>
+            <button type="button" class="mdl-button close">SAIR</button>
+      </dialog>
+    </div>
+      <script>
+        var dialog = document.querySelector('dialog');
+        var showModalButton = document.querySelector('.dialog_entrar');
+        if (! dialog.showModal) {
+          dialogPolyfill.registerDialog(dialog);
+        }
+        showModalButton.addEventListener('click', function() {
+          dialog.showModal();
+        });
+        dialog.querySelector('.close').addEventListener('click', function() {
+          dialog.close();
+        });
+        dialog.querySelector('.ok-button').addEventListener('click', function() {
+          window.location.replace("app.html");
+          dialog.close();
+        });
+      </script>
+    </div>
+  </main>
+</div>
+  </body>
+</html>
